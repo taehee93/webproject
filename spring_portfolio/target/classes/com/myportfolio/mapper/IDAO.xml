@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.myportfolio.common.InterfaceDAO">
+	
+	<!-- 검색 페이지에서 식당 검색 sql문 -->
+	<select id="search_eatery" resultType="com.myportfolio.proc.searchVO">
+		select eatery as title,left(cont,50) as cont,reg_date,num as no from eaterylist where eatery like #{param1} or cont like #{param1}
+	</select>
+	
+	<!-- 검색 페이지에서 리뷰 검색 sql문 -->
+	<select id="search_review" resultType="com.myportfolio.proc.searchVO">
+		select title,left(cont,50) as cont,reg_date,no from review where title like #{param1} or cont like #{param1}
+	</select>
+	
+	<!-- 식당 페이지에서 등록된 식당 리스트 -->
+	<select id="select_eatery" resultType="com.myportfolio.proc.eateryVO">
+		select * from eaterylist order by num desc
+	</select>
+	
+	<!-- 식당 상세보기 -->
+	<select id="select_eatery_view" resultType="com.myportfolio.proc.eateryVO">
+		select * from eaterylist where num= #{param1}
+	</select>
+	
+	<insert id="insert_eatery">
+		insert into eaterylist(food_code,eatery,cont,phon,business_hours,address,reg_date,file_name) values(#{param1},#{param2},#{param3},#{param4},#{param5},#{param6},#{param7},#{param8})
+	</insert>
+	
+</mapper>

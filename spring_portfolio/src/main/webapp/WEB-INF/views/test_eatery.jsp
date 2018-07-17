@@ -7,11 +7,11 @@
 </style>
     <div class="eatery_list">
         <p><h2>추가된 식당</h2></p>
-        <c:forEach items="${list}" var="mem">
-        <a href="eateryview?num=${mem[2] }">
+        <c:forEach items="${eatery}" var="eatery">
+        <a href="eateryview?num=${eatery.num }">
         <ul>
-            <li class="eatery_img"><img src="file_room/${mem[0] }"></li>
-            <li><h2>${mem[1] }</h2></li>
+            <li class="eatery_img"><img src="file_room/${eatery.file_name }"></li>
+            <li><h2>${eatery.eatery }</h2></li>
         </ul>
         </a>
         </c:forEach>

@@ -1,25 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"  pageEncoding="utf-8"%>
 <%@ include file="test_header.jsp" %>
-<%
-    String sel = pwk.checkNull(request.getParameter("sel"));
-    String search = pwk.checkNull(request.getParameter("search"));
-    
-    String tdCount = "4";
-    int is_count = 5;
-   
-%>
-<%@ include file="page_technique/page_var.jsp" %>
 <div class="sub-contents">
        
 	       <section id="contents">
 	           <h2 id="stitle" class="stitle">한식</h2>
 	           <div class="sub-wrap">
                    <div class="board-count">
-                       <p>전체<span class="color">
-                       <%
-                       if(result != null) out.print(result.length);
-                       else out.print("0");
-                       %>건</span>&nbsp;&nbsp;현제페이지 <span class="color"><%=current_page%> / <%=total_page%></span></p>
+                       <p>전체<span class="color">건</span>&nbsp;&nbsp;현제페이지 <span class="color"> / </span></p>
                    </div>
                    <div class="board-search">
                        <form name="search_ko" action="test_eatery_ko">
@@ -37,11 +24,9 @@
                    </div>
                    <div class="board-list">
                        <ul>
-                          <%@ include file="page_technique/page_top.jsp" %>
                            <li>
-                           <a href='eateryview?num=<%=result[k][3]%>'><p><img src='file_room/<%=result[k][2]%>'></p><span class='title'><%=result[k][0]%></span><span class='txt'><%=result[k][1]%></span></a>
+                           <a href='eateryview?num='><p><img src='file_room/'></p><span class='title'></span><span class='txt'></span></a>
                            </li>
-                          <%@ include file="page_technique/page_bottom.jsp" %> 
                        </ul>
                    </div>
 	           </div>

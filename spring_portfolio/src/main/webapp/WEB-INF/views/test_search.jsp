@@ -28,10 +28,10 @@
                <p class="search_title">식당</p>
                 <ul>
                    <c:forEach items="${eatery}" var="eatery">
-                        <a href="eateryview?num=${eatery[3] }" class="go_view">
-                            <li><h2>${eatery[0] }</h2></li>
-                            <li>${eatery[1] }</li>
-                            <li>${eatery[2] }</li>
+                        <a href="eateryview?num=${eatery.no }" class="go_view">
+                            <li><h2>${eatery.title }</h2></li>
+                            <li>${eatery.cont }</li>
+                            <li>${eatery.reg_date }</li>
                         </a>
                     </c:forEach>    
                 </ul>
@@ -43,9 +43,9 @@
                 <ul>
                     <c:forEach items="${review}" var="review">
                         <a href="javascript:void(0)" class="go_view">
-                            <li><h2>${review[0] }</h2></li>
-                            <li>${review[1] }</li>
-                            <li>${review[2] }</li>
+                            <li><h2>${review.title }</h2></li>
+                            <li>${review.cont }</li>
+                            <li>${review.reg_date }</li>
                         </a>
                     </c:forEach>
                 </ul>
